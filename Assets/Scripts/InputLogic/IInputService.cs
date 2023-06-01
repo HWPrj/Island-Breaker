@@ -5,5 +5,5 @@ using UnityEngine.Events;
 
 public interface IInputService
 {
-    event UnityAction Dragged;
+    event UnityAction<Vector2> InputMove;
 }
