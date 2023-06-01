@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using static UnityEngine.EventSystems.StandaloneInputModule;
 
 public class MobailInputService : MonoBehaviour, IInputService, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
@@ -19,7 +18,6 @@ public class MobailInputService : MonoBehaviour, IInputService, IPointerDownHand
     {
         Vector2 direction = eventData.position - _lastPosition;
         InputMove?.Invoke(direction);
-        Debug.Log(direction);
         _lastPosition = eventData.position;
     }
 
