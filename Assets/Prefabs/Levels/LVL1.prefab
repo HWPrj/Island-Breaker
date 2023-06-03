@@ -32,7 +32,7 @@ Transform:
   - {fileID: 5174711039880400032}
   - {fileID: 4721777012123148895}
   - {fileID: 7895526068584238693}
-  - {fileID: 7303774722126071439}
+  - {fileID: 394996235064935766}
   - {fileID: 9005944572284264491}
   - {fileID: 5810426937608715148}
   - {fileID: 2617209269520104598}
@@ -52,6 +52,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402781378724327437, guid: b74348b0c5c40534687548c97e205c11,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5467358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402781378724327437, guid: b74348b0c5c40534687548c97e205c11,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.789
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402781378724327437, guid: b74348b0c5c40534687548c97e205c11,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.837697
       objectReference: {fileID: 0}
     - target: {fileID: 8309379534218703828, guid: b74348b0c5c40534687548c97e205c11,
         type: 3}
@@ -113,9 +128,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b74348b0c5c40534687548c97e205c11, type: 3}
---- !u!4 &7303774722126071439 stripped
+--- !u!4 &394996235064935766 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8309379534218703828, guid: b74348b0c5c40534687548c97e205c11,
+  m_CorrespondingSourceObject: {fileID: 1402781378724327437, guid: b74348b0c5c40534687548c97e205c11,
     type: 3}
   m_PrefabInstance: {fileID: 1588891887933912411}
   m_PrefabAsset: {fileID: 0}
@@ -185,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 8295028506901358934, guid: acfd325aac0ff9446a2bcd0c942af459,
         type: 3}
       propertyPath: m_Name
-      value: MovableBoxPrefab
+      value: MovableBox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -209,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 3636217881955038478, guid: 65181608684353f468a201af979bf351,
         type: 3}
       propertyPath: m_Name
-      value: BridgePrefab
+      value: Bridge
       objectReference: {fileID: 0}
     - target: {fileID: 5345077988507770745, guid: 65181608684353f468a201af979bf351,
         type: 3}
@@ -595,7 +610,7 @@ PrefabInstance:
     - target: {fileID: 6150615069589245539, guid: d593cb6fa8c4aaa429177593d4ab2911,
         type: 3}
       propertyPath: m_Name
-      value: SwordPrefab
+      value: Sword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
