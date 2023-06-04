@@ -591,6 +591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 763675373976167104}
   - component: {fileID: 6686229860164081363}
+  - component: {fileID: 2247633431051847287}
   m_Layer: 0
   m_Name: Cloud_V2
   m_TagString: Untagged
@@ -624,7 +625,7 @@ Transform:
   - {fileID: 942131818561025479}
   - {fileID: 2158381756799621805}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6686229860164081363
 BoxCollider:
@@ -647,6 +648,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 1.999999, z: 3}
   m_Center: {x: 31, y: 7.9, z: -3.25}
+--- !u!114 &2247633431051847287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3279580466974639838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75fa7ca0a513ce647b0aa4c082027afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clouds_blocks:
+  - {fileID: 3374447444328369622}
+  - {fileID: 4328073316803105999}
+  - {fileID: 8650742179263101443}
+  - {fileID: 6606123819377682791}
+  - {fileID: 7915843899925008063}
+  - {fileID: 4932788488525945279}
+  - {fileID: 5744005308511456844}
+  - {fileID: 1528486190674738491}
+  - {fileID: 7058475281626888913}
+  - {fileID: 2483542815362210568}
+  - {fileID: 2675402480447915168}
+  - {fileID: 4312758962895824618}
+  - {fileID: 6318889487673176349}
+  cloud_collider: {fileID: 6686229860164081363}
+  min_duration: 1
+  max_duration: 2
+  min_scatterRange: -5
+  max_scatterRange: 5
 --- !u!1 &4515134665541579333
 GameObject:
   m_ObjectHideFlags: 0
