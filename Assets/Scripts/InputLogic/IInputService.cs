@@ -6,4 +6,5 @@ using UnityEngine.Events;
 public interface IInputService
 {
     event UnityAction<Vector2> InputMove;
+    event UnityAction InputStopMove;
 }

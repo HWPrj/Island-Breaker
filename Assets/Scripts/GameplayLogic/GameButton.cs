@@ -5,56 +5,49 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Button : MonoBehaviour
+public class GameButton : MonoBehaviour
 {
     [SerializeField] private Material activeMaterial;
     [SerializeField] private Renderer buttonPresserRender;
 
     [FormerlySerializedAs("OnStep")]
     [SerializeField]
-    private UnityEvent OnStep = new UnityEvent();
+    private UnityEvent Active = new UnityEvent();
 
     [FormerlySerializedAs("OnLeave")]
     [SerializeField]
-    private UnityEvent OnLeave = new UnityEvent();
+    private UnityEvent Deactive = new UnityEvent();
 
-    private Material _unActiveMaterial;
     private void Awake()
     {
-        _unActiveMaterial = GetComponent<Material>();
     }
     private void SetActive()
     {
-        buttonPresserRender.material = activeMaterial;
+        buttonPresserRender.material.color = Color.green;
     }
 
     private void SetUnActive()
     {
-        buttonPresserRender.material = _unActiveMaterial;
+        buttonPresserRender.material.color = Color.red;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Moveable" || other.tag == "Player")
+        if (other.TryGetComponent(out IMovable movable))
         {
-
-            //... анимации и т.д.
-
-            OnStep.Invoke();
+            SetActive();
+            Active.Invoke();
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Moveable" || other.tag == "Player")
+        if (other.TryGetComponent(out IMovable movable))
         {
-
-            //... анимации и т.д.
-
-            OnLeave.Invoke();
+            SetUnActive();
+            Deactive.Invoke();
         }
     }
 
-    // to remove after tests
     public void LogText(string _text)
     {
         Debug.Log(_text);

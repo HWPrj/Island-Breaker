@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class MobailInputService : MonoBehaviour, IInputService, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     public event UnityAction<Vector2> InputMove;
+    public event UnityAction InputStopMove;
+
     private Vector2 _lastPosition;
 
     public void OnPointerDown(PointerEventData eventData)
@@ -23,6 +25,6 @@ public class MobailInputService : MonoBehaviour, IInputService, IPointerDownHand
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        
+        InputStopMove?.Invoke();
     }
 }
