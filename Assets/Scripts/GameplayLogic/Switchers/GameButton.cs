@@ -5,20 +5,18 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Button : MonoBehaviour
+public class GameButton : MonoBehaviour, ISwitcher
 {
     [SerializeField] private Material activeMaterial;
     [SerializeField] private Renderer buttonPresserRender;
 
-    [FormerlySerializedAs("OnStep")]
-    [SerializeField]
-    private UnityEvent OnStep = new UnityEvent();
 
-    [FormerlySerializedAs("OnLeave")]
-    [SerializeField]
-    private UnityEvent OnLeave = new UnityEvent();
+    public event UnityAction Activate;
+    public event UnityAction Deactivate;
 
     private Material _unActiveMaterial;
+
+
     private void Awake()
     {
         _unActiveMaterial = GetComponent<Material>();
@@ -40,7 +38,7 @@ public class Button : MonoBehaviour
 
             //... анимации и т.д.
 
-            OnStep.Invoke();
+            Activate.Invoke();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -50,7 +48,7 @@ public class Button : MonoBehaviour
 
             //... анимации и т.д.
 
-            OnLeave.Invoke();
+            Deactivate.Invoke();
         }
     }
 
