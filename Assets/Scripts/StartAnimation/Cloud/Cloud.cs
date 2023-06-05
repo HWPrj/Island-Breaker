@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cloud : MonoBehaviour
+public class Cloud : MonoBehaviour, IDotWeenAnimation
 {
     [SerializeField] private MeshRenderer[] clouds_blocks;
     [SerializeField] private BoxCollider cloud_collider;
@@ -13,7 +13,7 @@ public class Cloud : MonoBehaviour
     [SerializeField] private float min_scatterRange;
     [SerializeField] private float max_scatterRange;
     
-    public void Dispelling()
+    public void PlayAnimation()
     {
         cloud_collider.isTrigger = true;
         
