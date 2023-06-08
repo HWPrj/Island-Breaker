@@ -8,11 +8,13 @@ public class Player : MonoBehaviour, IMovable
     [SerializeField] private float speed;
 
     [SerializeField] private ServicesLoader servicesLoader;
-    [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private Rigidbody playerRigidbody;
     private IInputService inputService;
     private Vector3 _direction;
+    private Camera _camera;
     private void Start()
     {
+        _camera = Camera.main;
         inputService = servicesLoader.ServiceLocator.Get<IInputService>();  
         inputService.InputMove += OnInputMove;
         inputService.InputStopMove += OnStopInputMove;
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour, IMovable
     private void FixedUpdate()
     {
         Vector3 direction = new Vector3(_direction.x, 0, _direction.y);
-        Debug.Log(rigidbody.velocity);
-        rigidbody.AddForce(direction * speed);
+        direction = _camera.transform.TransformDirection(direction);
+        playerRigidbody.AddForce(direction * speed);
     }
 }
